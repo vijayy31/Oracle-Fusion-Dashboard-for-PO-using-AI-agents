@@ -6,7 +6,7 @@ An AI-powered conversational dashboard for querying Oracle Fusion Purchase Order
 
 ## 📽️ Demo
 
-<video controls src="20260418-0844-59.7462742.mp4" title="Title"></video>
+<video controls src="Dashboard_working_demo1.mp4" title="Title"></video>
 
 ---
 
