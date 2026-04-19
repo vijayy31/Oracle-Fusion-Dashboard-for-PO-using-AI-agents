@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Georgia", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-brand: #612EF5;
+  --color-brand-light: rgba(97, 46, 245, 0.1);
+  --color-brand-glow: rgba(97, 46, 245, 0.2);
+  
+  --color-background: #FFFFFF;
+  --color-sidebar: #F9FAFB;
+  --color-foreground: #111827;
+  --color-muted: #6B7280;
+  --color-border: #E5E7EB;
+  
+  --color-accent: var(--color-brand);
+  --color-primary: var(--color-brand);
+  --color-secondary: var(--color-muted);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Global text selection */
+  ::selection {
+    background-color: rgba(97, 46, 245, 0.2);
+    color: inherit;
+  }
+
+  .dark {
+    --color-background: #0f1115;
+    --color-sidebar: #17181c;
+    --color-foreground: #F9FAFB;
+    --color-muted: #9CA3AF;
+    --color-border: #2a2d35;
+  }
+}
+
+.modern-input {
+  @apply bg-background border border-border rounded-xl px-6 py-4 text-foreground transition-all duration-200;
+  @apply focus:outline-none focus:border-brand focus:ring-4 focus:ring-brand-glow;
+  @apply shadow-[0_1px_2px_rgba(0,0,0,0.05)];
+}
+
+.modern-button {
+  @apply bg-brand text-white font-semibold py-3 px-8 rounded-xl transition-all duration-200;
+  @apply hover:opacity-90 active:scale-95 shadow-lg shadow-brand/20;
+}
+
+.modern-card {
+  @apply bg-background border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.editorial-h1 {
+  @apply font-serif italic text-[104px] leading-[0.85] tracking-[-0.04em] mb-8 transition-all;
+}
+
+.editorial-label {
+  @apply font-sans font-extrabold text-[11px] uppercase tracking-[0.25em] text-accent;
+}
+
+.editorial-meta {
+  @apply font-sans font-bold text-[12px] uppercase tracking-[0.15em] opacity-80;
+}
+
+.glass-panel {
+  background: rgba(245, 243, 240, 0.85);
+  backdrop-filter: blur(16px);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
